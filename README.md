@@ -1,5 +1,7 @@
 # Banco de Dados
-Este repositório contém arquivos da disciplina de Banco de Dados I durante o curso de graduação. Dentro deles há todos os projetos feitos na disciplina documentados.
+Este repositório contém projetos da disciplina de Banco de Dados I feito durante o curso de graduação na Universidade de Vila Velha. Todos os projetos estão detalhadamente documentados nos seus respectivos subdiretórios.
+
+Os projetos são chamados especificamente de "psets" (_Problem Set_). Um Pset é um trabalho amplo e difícil que usa vários conceitos da matéria. É a melhor maneira de testar o conhecimento em um assunto.
 
 Use este repositório como ajuda durante os estudos de bancos de dados.
 
