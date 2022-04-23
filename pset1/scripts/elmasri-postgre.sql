@@ -1,3 +1,16 @@
+/*
+Descrição     : Projeto Elmasri de banco de dados do livro "Sistemas de Banco de Dados",
+              : por Ramez Elmasri e Shamkant B. Navathe, 7ed.	
+										
+Autor         : Yuri Soares.
+
+Colaboradores : Pedro Lima;
+              : Roberto Souza.
+Orientador    : prof. Abrantes Araújo S. Filho.
+
+Versão SGBD   : PostgreSQL 14.2
+*/
+
 -- Criar um novo usuário (yuri) com SENHA '1234' para administrar os bancos de dados
 
 CREATE ROLE yuri WITH

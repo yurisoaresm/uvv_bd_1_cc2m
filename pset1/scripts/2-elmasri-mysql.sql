@@ -1,3 +1,15 @@
+/*
+Descrição     : Projeto Elmasri de banco de dados do livro "Sistemas de Banco de Dados",
+              : por Ramez Elmasri e Shamkant B. Navathe, 7ed.	
+										
+Autor         : Yuri Soares.
+
+Colaboradores : Pedro Lima;
+              : Roberto Souza.
+Orientador    : prof. Abrantes Araújo S. Filho.
+
+Versão SGBD   : MariaDB 10.6.7
+*/
 
 USE uvv; -- Conectar-se ao banco de dados uvv
 

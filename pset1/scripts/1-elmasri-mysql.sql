@@ -1,3 +1,16 @@
+/*
+Descrição     : Projeto Elmasri de banco de dados do livro "Sistemas de Banco de Dados",
+              : por Ramez Elmasri e Shamkant B. Navathe, 7ed.	
+
+Autor         : Yuri Soares.
+
+Colaboradores : Pedro Lima;
+              : Roberto Souza.
+Orientador    : prof. Abrantes Araújo S. Filho.
+
+Versão SGBD   : MariaDB 10.6.7
+*/
+
 -- Criar um usuário para administrar o banco de dados uvv
 
 CREATE USER 'yuri'@'localhost' IDENTIFIED BY '1234';
