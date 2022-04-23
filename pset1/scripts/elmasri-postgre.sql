@@ -41,7 +41,7 @@ CREATE TABLE elmasri.funcionario (
                 sexo CHAR(1) CHECK (sexo = 'M' OR sexo = 'F'),
                 salario DECIMAL(10,2) CHECK (salario >= 0),
                 cpf_supervisor CHAR(11) CHECK (cpf_supervisor != cpf),
-                numero_departamento INTEGER NOT NULL,
+                numero_departamento INTEGER NOT NULL CHECK (numero_departamento >= 0),
                 CONSTRAINT pk_funcionario PRIMARY KEY (cpf)
 );
 
@@ -211,6 +211,7 @@ ON UPDATE CASCADE;
 
 
 ---------------- INSERIR OS DADOS NAS TABELAS ----------------
+-- Formatação de DATE: YYYY-MM-DD
 
 INSERT INTO elmasri.funcionario (primeiro_nome, nome_meio, ultimo_nome, cpf, data_nascimento, endereco, sexo, salario, cpf_supervisor, numero_departamento) 
 	VALUES 
