@@ -35,12 +35,16 @@ CREATE DATABASE uvv
 
 \c uvv yuri;
 
--- Criar esquema elmasri e autorizá-lo para o usuário criado anteriormente e
--- torná-lo padrão para que as tabelas sejam criadas dentro dele
+-- Criar esquema elmasri e autorizá-lo para o usuário criado anteriormente
 
 CREATE SCHEMA elmasri AUTHORIZATION yuri;
-SET SEARCH_PATH TO elmasri, yuri, public;
 
+SET SEARCH_PATH TO elmasri, "$user", public; -- Definir o esquema atual como elmasri
+
+-- Definir o esquema elmasri sempre como padrão para o usuário 
+
+ALTER USER yuri 
+SET SEARCH_PATH TO elmasri, "$user", public;
 
 ---------------- IMPLEMENTANDO AS TABELAS DO PROJETO ELMASRI ----------------
 

@@ -21,14 +21,18 @@ Uma vez completado esta parte, é o momento de fazer as relações entre cada ta
 
 Por fim, é importante fazer uma revisão geral para identificar possíveis problemas no projeto. Este modelo gerará os códigos de SQL com todos as formatações (com alguns poucos desajustes que serão corrigidos posteriormente).
 
-## 3. Implementação no PostreSQL
+## 3. Implementação no PostgreSQL
 O projeto foi pensado para ser rodado via um script.sql. Nele deve estar todos os códigos, na ordem correta, para serem executados e criar todo o esquema do modelo lógico no banco de dados.
 
 A primeira coisa é criar um usuário para gerir o nosso banco de dados (não é recomendável usar o usuário padrão do SGBD que, neste caso, é o postgres). Para tanto, usa-se o comando [CREATE ROLE](https://www.postgresql.org/docs/14/sql-createrole.html "Documentação PostgreSQL: CREATE ROLE") com seus devidos privilégios para poder modificar o nosso projeto. Eu criei um **usuário** chamado yuri com **senha** '1234' (obviamente é apenas para teste). Depois, criamos o banco de dados com o usuário criado como proprietário, codificação UTF-8 e permissão para conexão com o comando [CREATE DATABASE](https://www.postgresql.org/docs/14/sql-createdatabase.html "Documentação PostgreSQL: CREATE DATABASE")  (neste projeto, o banco de dados é nomeado **uvv**).
 
 Feito isso, contectamos em uvv com o nosso usuário e criamos o **esquema** chamado "elmasri" (ver [CREATE SCHEMA](https://www.postgresql.org/docs/14/sql-createschema.html "Documentação PostgreSQL: CREATE SCHEMA") ). Isso é preciso para evitar que todas as tabelas sejam criadas no esquema público para evitar conflitos como se, por exemplo, duas tabelas fossem criadas com o mesmo nome (bastaria criá-las em esquemas separados). 
 
-Agora, ainda não estamos no esquema "elmasri". Portanto, tudo que for criado continuará no "public". Antes de criar as tabelas e ir para os próximos passos é preciso alterar o esquema padrão do nosso usuário para o desejado exercutando o comando seguinte:
+Ainda não estamos no esquema criado. Portanto, tudo que for criado continuará no "public". Antes de prosseguirmos será preciso alterar o esquema atual para o desejado executando o comando seguinte:
+
+    SET SEARCH_PATH TO elmasri, "$user", public;
+
+Pronto. Tudo que for feito no banco de dados uvv será salvo no esquema elmasri. Contudo, sempre que nos reconectarmos a esse banco de dados com o usuário criado o esquema voltará a ser o "public". Para resolver esse problema, use o comando abaixo (ele irá definir o esquema elmasri sempre como padrão para o usuário):
 
     ALTER USER <nome do usuário> SET SEARCH_PATH TO elmasri, "$user", public;
 
