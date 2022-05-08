@@ -95,7 +95,7 @@ projeto AS p ON p.numero_projeto = t.numero_projeto;
 
 -- Relatório que exibe o nome do departamento, do projeto e o nome dos funcionários que não registraram nenhuma hora trabalhada
 SELECT d.nome_departamento, p.nome_projeto, (f.primeiro_nome ||' '|| f.nome_meio ||' '|| f.ultimo_nome) AS nome_funcionário, (CASE WHEN(t.horas IS NULL) THEN 'Nenhuma' END) AS horas_trabalhadas
-FROM funcionario AS F
+FROM funcionario AS f
 INNER JOIN
 trabalha_em AS t ON t.cpf_funcionario = f.cpf AND t.horas IS NULL
 INNER JOIN
@@ -113,14 +113,14 @@ ORDER BY idade DESC;
 
 -- Relatório que exibe a quantidade de funcionários de cada departamento
 SELECT d.nome_departamento, COUNT(f.cpf) AS numero_funcionarios
-FROM funcionario AS F
+FROM funcionario AS f
 INNER JOIN
 departamento AS d ON d.numero_departamento = f.numero_departamento
 GROUP BY d.nome_departamento;
 
 -- Relatório com o nome completo dos funcionários, seu departamento e o nome dos projetos em que cada um está alocado
 SELECT (f.primeiro_nome ||' '|| f.nome_meio ||' '|| f.ultimo_nome) AS nome_funcionario, d.nome_departamento, p.nome_projeto
-FROM funcionario AS F
+FROM funcionario AS f
 INNER JOIN
 departamento AS d ON f.numero_departamento = d.numero_departamento
 INNER JOIN 
