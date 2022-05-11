@@ -1,5 +1,5 @@
 # Problem Set 2
-O _Problem Set_ 2 é uma extensão do _[Problem Set 1](https://github.com/yurisoaresm/uvv_bd_1_cc2m/tree/pset2/pset1 "Pset1")_ Nele vamos exibir vários relatórios referentes ao banco de dados Elmasri feito anteriormente. O objetivo deste pset é "fazer o usuário aprender a usar a Structured Query Language (SQL) em nível básico e intermediário".
+O _Problem Set_ 2 é uma extensão do _[Problem Set 1](https://github.com/yurisoaresm/uvv_bd_1_cc2m/tree/pset2/pset1 "Pset1")_ Nele vamos exibir vários relatórios referentes ao banco de dados Elmasri feito anteriormente. O objetivo deste pset é "fazer o usuário aprender a usar a Structured Query Language (SQL) em nível básico e intermediário". Este script foi feito no SGBD **PostgreSQL** e com algumas funções específicas dele.
 
 Este projeto foi desenvolvido com a **colaboração** de:
 - [Pedro Lima](https://github.com/PedroLimaCarari "Perfil do Pedro Lima"), e
@@ -14,7 +14,7 @@ Os comandos básicos que traduzem a álgebra relacional (matematicamente falando
 
 Além desses comandos básicos, usamos também operações mais complexas: UNION (união: junta dados de duas ou mais relações que possuem os mesmos tipos de atributos) e o INNER JOIN (junção teta: cria uma relação a partir da junção de outras, ainda que seus atributos sejam de tipos diferentes; um exemplo disso é o primeiro relatório, onde o atributo nome_departamento da relação "departamento" foi posto ao lado do atributo média_salarial da tabela "funcionario").
 
-## Execução
+## Execução no PostgreSQL
 Para executar este script via terminal a partir da home (com o usuário criado no pset1):
 
     psql uvv -U yuri -W < ~/uvv_bd_1_cc2m/pset2/relatorios.sql
