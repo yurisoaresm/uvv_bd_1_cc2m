@@ -8,7 +8,7 @@ Colaboradores : Pedro Lima;
               : Roberto Souza.
 Orientador    : prof. Abrantes Araújo S. Filho.
 
-Versão SGBD   : 
+Versão SGBD   : PostgreSQL 14.2
 */
 
 -- Relatório da média salarial dos funcionários de cada departamento
