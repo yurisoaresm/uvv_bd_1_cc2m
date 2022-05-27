@@ -1,6 +1,6 @@
 /*
-Descrição     : Projeto Elmasri de banco de dados apresentado no capítulo 5 do livro 
-						  : "Sistemas de Bancos de Dados" de Elmasri e Navathe, 7ed.	
+Descrição : Projeto Elmasri de banco de dados apresentado no capítulo 5 do livro 
+				  : "Sistemas de Bancos de Dados" de Elmasri e Navathe, 7ed.	
 										
 Autor         : Yuri Soares
 

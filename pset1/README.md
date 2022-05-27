@@ -24,7 +24,7 @@ Por fim, é importante fazer uma revisão geral para identificar possíveis prob
 ## 3. Implementação no PostgreSQL
 O projeto foi pensado para ser rodado via um script.sql. Nele deve estar todos os códigos, na ordem correta, para serem executados e criar todo o esquema do modelo lógico no banco de dados.
 
-A primeira coisa é criar um usuário para gerir o nosso banco de dados (não é recomendável usar o usuário padrão do SGBD que, neste caso, é o postgres). Para tanto, usa-se o comando [CREATE ROLE](https://www.postgresql.org/docs/14/sql-createrole.html "Documentação PostgreSQL: CREATE ROLE") com seus devidos privilégios para poder modificar o nosso projeto. Eu criei um **usuário** chamado yuri com **senha** '1234' (obviamente é apenas para teste). Depois, criamos o banco de dados com o usuário criado como proprietário, codificação UTF-8 e permissão para conexão com o comando [CREATE DATABASE](https://www.postgresql.org/docs/14/sql-createdatabase.html "Documentação PostgreSQL: CREATE DATABASE")  (neste projeto, o banco de dados é nomeado **uvv**).
+A primeira coisa é criar um usuário para gerir o nosso banco de dados (não é recomendável usar o usuário padrão do SGBD que, neste caso, é o postgres). Para tanto, usa-se o comando [CREATE USER](https://www.postgresql.org/docs/14/sql-createuser.html "Documentação PostgreSQL: CREATE USER") com seus devidos privilégios para poder modificar o nosso projeto. Eu criei um **usuário** chamado yuri com **senha** '123456' (obviamente é apenas para teste). Depois, criamos o banco de dados com o usuário criado como proprietário, codificação UTF-8 e permissão para conexão com o comando [CREATE DATABASE](https://www.postgresql.org/docs/14/sql-createdatabase.html "Documentação PostgreSQL: CREATE DATABASE")  (neste projeto, o banco de dados é nomeado **uvv**).
 
 Feito isso, contectamos em uvv com o nosso usuário e criamos o **esquema** chamado "elmasri" (ver [CREATE SCHEMA](https://www.postgresql.org/docs/14/sql-createschema.html "Documentação PostgreSQL: CREATE SCHEMA") ). Isso é preciso para evitar que todas as tabelas sejam criadas no esquema público para evitar conflitos como se, por exemplo, duas tabelas fossem criadas com o mesmo nome (bastaria criá-las em esquemas separados). 
 
@@ -46,7 +46,7 @@ Para executar o script via terminal¹, basta rodar o comando ("postgre" é o sup
 
 Executando o arquivo deste repositório via shell a partir da home²: 
 
-    $ psql -U postgre -W -f ~/uvv_bd_1_cc2m/pset1/scripts/elmasri-postgre.sql
+    $ psql -U postgre -W < ~/uvv_bd_1_cc2m/pset1/scripts/elmasri-postgre.sql
 
 ------------
 
