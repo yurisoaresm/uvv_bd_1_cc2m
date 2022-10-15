@@ -9,6 +9,8 @@ E **orientado** por: [prof. Abrantes Araújo S. Filho](https://github.com/abrant
 
 Este documento explica o passo a passo para conseguir implementar o projeto completo conforme o "Pset 1".
 
+> Para saber como executar este projeto, vá para a seção 3.1 (PostgreSQL) e/ou 4 (MySQL/MariaDB).
+
 ## 1. Git e GitHub
 Um pset é um problema extremamente difícil que facilmente leva dias para ser concluído. Para este contexto é preciso ter um SCV (Sistema de Controle de Versão) para auxiliar no processo. Neste problema foi (e é recomendável) usado o [Git](https://git-scm.com/book/pt-br/v2 "Documentação do Git") e o [GitHub](https://docs.github.com/pt "Documentação do GitHub").
 
@@ -40,19 +42,21 @@ Finalmente, é hora de criar as tabelas com todos os detalhes do modelo lógico.
 
 Para concluir, inserimos os dados em cada tabela. É preciso se atentar a duas coisas: a) a data por padrão tem formato ANO-MÊS-DIA (YYYY-MM-DD), logo é preciso tomar cuidado ao adicioná-las nesse padrão; b) na tabela funcionário não será possível inserir um funcionário cujo cpf_supervisor ainda não tenha sido incluído como cpf, porque um valor de FK não pode ser criado antes que ele já exista como PK.
 
-Para executar o script via terminal¹, basta rodar o comando ("postgre" é o superusuário; lembre-se de não ter nenhum usuário ou banco de dados com o mesmo nome): 
+### 3.1 Script de Execução
 
-    psql -U postgre -W -f caminho/para/script.sql
+O script main.sql foi criado para executar todos os outros scripts automaticamente. A separação dos códigos foi feita por último com a finalidade de organizar o processo. 
 
-Executando o arquivo deste repositório via shell a partir da home²: 
+Para executá-lo via terminal¹, basta rodar o comando abaixo ("postgres" é o superusuário): 
 
-    $ psql -U postgre -W < ~/uvv_bd_1_cc2m/pset1/scripts/elmasri-postgre.sql
+    psql -U postgres -W -f caminho/para/o/arquivo/main.sql
 
+Logo no início será solicitado via terminal o caminho para este repositório (para a pasta "uvv_bd_1_cc2m"). A depender do **local onde este repositório foi clonado** e/ou o **sistema operacional** usado (Linux/Windows), o **atalho será diferente**.  
+
+Normalmente os arquivos estão sempre dentro de um usuário do sistema. Portanto, o caminho inserido deverá ser parecido com `/c/Users/username/uvv_bd_1_cc2m/` (Windows) ou `~/username/uvv_bd_1_cc2m/` (Linux). O importante aqui é saber que o caminho deve levar até a pasta "uvv_bd_1_cc2m/" para que o script funcione corretamente.
+    
 ------------
 
 **Observações**: ¹ executar o script em intefaces gráficas (GUIs) pode ocasionar muitas dores de cabeça, pois alguns comandos não rodam sozinhos ou em conjunto, mas via terminal é bem mais simples e até rápido uma vez que todos os passos foram corretamente colocados no script; 
-
-² "a partir da home" quero dizer que você clonou este repositório na sua home.
 
 ## 4. Implementação no MariaDB
 A partir daqui fica mais fácil implementar o projeto no MariaDB. Voltando para o Power Architect, geramos o código do MySQL a partir do modelo lógico (novamente). O comando para inserir os dados serão exatamente os mesmos usados anteriormente.
