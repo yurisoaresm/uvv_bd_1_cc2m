@@ -1,5 +1,5 @@
 /*
-Descrição     : Projeto Elmasri de banco de dados apresentado no capítulo 5 do livro 
+Descrição     : Projeto de banco de dados apresentado no capítulo 5 do livro 
 				      : "Sistemas de Bancos de Dados" de Elmasri e Navathe, 7ed.	
 										
 Autor         : Yuri Soares
@@ -11,12 +11,12 @@ Orientador    : prof. Abrantes Araújo Silva Filho
 Versão SGBD   : PostgreSQL 14.2
 */
 
-/* --------------------------------------------------------------------------- */
+/* =========================================================================== */
 /* LIMPEZA GERAL:                                                              */
 /* --------------------------------------------------------------------------- */
 /* Esta seção do script faz uma "limpeza geral" no banco de dados, removendo o */
 /* banco de dados "uvv", se ele existir, e o usuário "yuri", se ele existir.   */
-/* --------------------------------------------------------------------------- */
+/* =========================================================================== */
 
 -- Remove o banco de dados "uvv", se existir:
 \echo
@@ -26,12 +26,12 @@ DROP DATABASE IF EXISTS uvv;
 DROP USER IF EXISTS yuri;
 
 
-/* --------------------------------------------------------------------------- */
+/* =========================================================================== */
 /* CRIA USUÁRIO E BANCO DE DADOS:                                              */
 /* --------------------------------------------------------------------------- */
 /* Agora que estamos com o banco de dados "zerado", precisamos recriar o       */
 /* usuário "yuri" e o banco de dados "uvv".                                    */
-/* --------------------------------------------------------------------------- */
+/* =========================================================================== */
 
 -- Cria o usuário "yuri", que será o dono do banco de dados "uvv". Por
 -- segurança esse usuário não será um super-usuário. E como este é um
@@ -66,13 +66,13 @@ COMMENT ON DATABASE uvv IS 'Banco de Dados Universidade (UVV) do PSet 1.'
 ;
 
 
-/* --------------------------------------------------------------------------- */
+/* =========================================================================== */
 /* CONEXÃO AO BANCO UVV E CRIAÇÃO DO SCHEMA ELMASRI:                           */
 /* --------------------------------------------------------------------------- */
 /* Com o usuário e o banco prontos, faremos a conexão ao banco "uvv" com o     */
 /* usuário "yuri" e criaremos o schema "elmasri". Também ajustaremos o         */
 /* SEARCH_PATH do usuário para manter o scheme "elmasri" como o padrão.        */
-/* --------------------------------------------------------------------------- */
+/* =========================================================================== */
 
 -- Conexão ao banco "uvv" como usuário "yuri", passando a senha via string
 -- de conexão. Obviamente isso só está sendo feito porque é um script de
@@ -99,10 +99,10 @@ ALTER USER yuri SET SEARCH_PATH TO elmasri, "$user", public;
 
 -- Executa o terceiro script para criação do projeto
 \echo 
-\echo Executando o terceiro script (3):
-\i :3-tables.sql
+\echo Executando o script de criação das tabelas:
+\i :elmasri_tables.sql
 
 -- Executa o terceiro script para criação do projeto
 \echo 
-\echo Executando o quarto script (4):
-\i :4-insert_datas.sql
+\echo Executando o script de inserção dos dados:
+\i :elmasri_inserts.sql

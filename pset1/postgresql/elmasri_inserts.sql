@@ -1,8 +1,21 @@
-/* --------------------------------------------------------------------------- */
+/*
+Descrição     : Projeto de banco de dados apresentado no capítulo 5 do livro 
+				      : "Sistemas de Bancos de Dados" de Elmasri e Navathe, 7ed.	
+										
+Autor         : Yuri Soares
+
+Colaboradores : Pedro Lima
+              : Roberto Souza
+Orientador    : prof. Abrantes Araújo Silva Filho
+
+Versão SGBD   : PostgreSQL 14.2
+*/
+
+/* =========================================================================== */
 /* INSERÇÃO DE DADOS NAS TABELAS DO PROJETO DO ELMASRI:                        */
 /* --------------------------------------------------------------------------- */
 /* Nesta seção faremos a inserção dos dados nas tabelas do projeto do Elmasri. */
-/* --------------------------------------------------------------------------- */
+/* =========================================================================== */
 
 -- Insere dados na tabela "funcionario":
 \echo

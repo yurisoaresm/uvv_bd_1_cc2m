@@ -1,9 +1,22 @@
-/* --------------------------------------------------------------------------- */
+/*
+Descrição     : Projeto de banco de dados apresentado no capítulo 5 do livro 
+				      : "Sistemas de Bancos de Dados" de Elmasri e Navathe, 7ed.	
+										
+Autor         : Yuri Soares
+
+Colaboradores : Pedro Lima
+              : Roberto Souza
+Orientador    : prof. Abrantes Araújo Silva Filho
+
+Versão SGBD   : PostgreSQL 14.2
+*/
+
+/* =========================================================================== */
 /* FUNCIONÁRIO:                                                                */
 /* --------------------------------------------------------------------------- */
 /* Nesta seção faremos a criação da tabela "funcionario" e dos demais objetos  */
 /* relacionados (constraints, chaves, checks, etc.).                           */
-/* --------------------------------------------------------------------------- */
+/* =========================================================================== */
 
 -- Cria a tabela "funcionario":
 \echo
@@ -51,12 +64,12 @@ COMMENT ON COLUMN funcionario.numero_departamento IS 'Número do departamento do
 
 
 
-/* --------------------------------------------------------------------------- */
+/* =========================================================================== */
 /* DEPENDENTE:                                                                 */
 /* --------------------------------------------------------------------------- */
 /* Nesta seção faremos a criação da tabela "dependente" e dos demais objetos   */
 /* relacionados (constraints, chaves, checks, etc.).                           */
-/* --------------------------------------------------------------------------- */
+/* =========================================================================== */
 
 -- Cria a tabela "dependente":
 \echo
@@ -91,12 +104,12 @@ COMMENT ON COLUMN dependente.parentesco IS 'Descrição do parentesco do depende
 
 
 
-/* --------------------------------------------------------------------------- */
+/* =========================================================================== */
 /* DEPARTAMENTO:                                                               */
 /* --------------------------------------------------------------------------- */
 /* Nesta seção faremos a criação da tabela "departamento" e dos demais objetos */
 /* relacionados (constraints, chaves, checks, etc.).                           */
-/* --------------------------------------------------------------------------- */
+/* =========================================================================== */
 
 -- Cria a tabela "departamento":
 \echo
@@ -134,12 +147,12 @@ COMMENT ON COLUMN departamento.data_inicio_gerente IS 'Data do início do gerent
 
 
 
-/* --------------------------------------------------------------------------- */
+/* =========================================================================== */
 /* PROJETO:                                                                    */
 /* --------------------------------------------------------------------------- */
 /* Nesta seção faremos a criação da tabela "projeto" e dos demais objetos      */
 /* relacionados (constraints, chaves, checks, etc.).                           */
-/* --------------------------------------------------------------------------- */
+/* =========================================================================== */
 
 -- Cria a tabela "projeto":
 \echo
@@ -174,12 +187,12 @@ COMMENT ON COLUMN projeto.numero_departamento IS 'Número do departamento. É um
 
 
 
-/* --------------------------------------------------------------------------- */
+/* =========================================================================== */
 /* TRABALHA EM:                                                                */
 /* --------------------------------------------------------------------------- */
 /* Nesta seção faremos a criação da tabela "trabalha_em" e dos demais objetos  */
 /* relacionados (constraints, chaves, checks, etc.).                           */
-/* --------------------------------------------------------------------------- */
+/* =========================================================================== */
 
 -- Cria a tabela "trabalha_em":
 \echo
@@ -213,12 +226,12 @@ COMMENT ON COLUMN elmasri.trabalha_em.horas IS 'Horas trabalhadas pelo funcioná
 
 
 
-/* --------------------------------------------------------------------------- */
+/* =========================================================================== */
 /* LOCALIZAÇÕES DO DEPARTAMENTO:                                               */
 /* --------------------------------------------------------------------------- */
 /* Nesta seção faremos a criação da tabela "localizacoes_departamento" e dos   */
 /* demais objetos relacionados (constraints, chaves, checks, etc.).            */
-/* --------------------------------------------------------------------------- */
+/* =========================================================================== */
 
 -- Cria a tabela "localizacoes_departamento":
 \echo
